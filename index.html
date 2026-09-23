@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Takedown | Solicitud de retiro</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #0b1120;
+      color: #fff;
+      min-height: 100vh;
+    }
+
+    header {
+      width: 100%;
+      padding: 20px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #1e293b;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: #38bdf8;
+    }
+
+    nav a {
+      color: #cbd5e1;
+      text-decoration: none;
+      margin-left: 25px;
+    }
+
+    nav a:hover {
+      color: #38bdf8;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 80px 20px 50px;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 span {
+      color: #38bdf8;
+    }
+
+    .hero p {
+      max-width: 650px;
+      margin: auto;
+      color: #94a3b8;
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 850px;
+      margin: 30px auto 80px;
+    }
+
+    .card {
+      background: #111827;
+      border: 1px solid #1e293b;
+      border-radius: 16px;
+      padding: 35px;
+      box-shadow: 0 20px 50px rgba(0,0,0,.25);
+    }
+
+    .card h2 {
+      margin-bottom: 25px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      color: #cbd5e1;
+    }
+
+    input,
+    textarea,
+    select {
+      width: 100%;
+      padding: 13px;
+      border-radius: 8px;
+      border: 1px solid #334155;
+      background: #0f172a;
+      color: white;
+      outline: none;
+    }
+
+    input:focus,
+    textarea:focus,
+    select:focus {
+      border-color: #38bdf8;
+    }
+
+    textarea {
+      min-height: 130px;
+      resize: vertical;
+    }
+
+    button {
+      width: 100%;
+      padding: 15px;
+      border: none;
+      border-radius: 8px;
+      background: #0284c7;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #0369a1;
+    }
+
+    .success {
+      display: none;
+      margin-top: 20px;
+      padding: 15px;
+      border-radius: 8px;
+      background: #064e3b;
+      color: #a7f3d0;
+    }
+
+    .info {
+      margin-top: 30px;
+      padding: 20px;
+      border-left: 4px solid #38bdf8;
+      background: #0f172a;
+      color: #94a3b8;
+      line-height: 1.6;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      border-top: 1px solid #1e293b;
+      color: #64748b;
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 36px;
+      }
+
+      nav {
+        display: none;
+      }
+
+      .card {
+        padding: 22px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">TAKEDOWN</div>
+
+    <nav>
+      <a href="#inicio">Inicio</a>
+      <a href="#solicitud">Solicitud</a>
+      <a href="#info">Información</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="inicio">
+    <h1>Solicitud de <span>Takedown</span></h1>
+
+    <p>
+      Envía una solicitud para reportar contenido que consideres
+      que debe ser revisado o retirado de nuestra plataforma.
+    </p>
+  </section>
+
+  <main class="container" id="solicitud">
+
+    <div class="card">
+
+      <h2>Formulario de solicitud</h2>
+
+      <form id="takedownForm">
+
+        <div class="form-group">
+          <label for="name">Nombre completo</label>
+          <input
+            type="text"
+            id="name"
+            placeholder="Tu nombre"
+            required
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="email">Correo electrónico</label>
+          <input
+            type="email"
+            id="email"
+            placeholder="correo@ejemplo.com"
+            required
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="url">URL del contenido</label>
+          <input
+            type="url"
+            id="url"
+            placeholder="https://ejemplo.com/contenido"
+            required
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="reason">Motivo de la solicitud</label>
+
+          <select id="reason" required>
+            <option value="">Selecciona un motivo</option>
+            <option value="copyright">Derechos de autor</option>
+            <option value="privacy">Privacidad</option>
+            <option value="impersonation">Suplantación de identidad</option>
+            <option value="illegal">Contenido ilegal</option>
+            <option value="other">Otro</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="description">Descripción del problema</label>
+
+          <textarea
+            id="description"
+            placeholder="Explica por qué solicitas el retiro del contenido..."
+            required
+          ></textarea>
+        </div>
+
+        <button type="submit">
+          Enviar solicitud
+        </button>
+
+        <div class="success" id="successMessage">
+          ✓ Solicitud enviada correctamente. Será revisada por nuestro equipo.
+        </div>
+
+      </form>
+
+      <div class="info" id="info">
+        <strong>Importante:</strong>
+        Las solicitudes deben incluir información suficiente para
+        identificar el contenido y explicar el motivo de la solicitud.
+        El envío de este formulario no garantiza que el contenido sea retirado.
+      </div>
+
+    </div>
+
+  </main>
+
+  <footer>
+    © 2026 Takedown — Sistema de solicitudes
+  </footer>
+
+  <script>
+    const form = document.getElementById("takedownForm");
+    const successMessage = document.getElementById("successMessage");
+
+    form.addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      successMessage.style.display = "block";
+
+      form.reset();
+
+      setTimeout(() => {
+        successMessage.style.display = "none";
+      }, 5000);
+    });
+  </script>
+
+</body>
+</html>
